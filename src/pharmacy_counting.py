@@ -9,6 +9,12 @@ from collections import Counter
 import pickle
 #import numpy as np
 
+
+# current time scaling with data size:
+# 5 records finish in 0.21 seconds 
+# 100K records finish in 0.79 seconds
+# 24525K records finish in 16.55 seconds
+
 def save_obj(obj, name ):
     with open(name + '.pkl', 'wb') as f:
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
@@ -42,6 +48,7 @@ def parse_line(line,prescriber_dict, cost_dict):
         print(line)
         sys.exit()
 
+# parse the chunk of data and save pkl to drive for later combining
 def parse_wrapper(fname, chk_start, chk_size, jobid):
     prescriber_dict = { }
     cost_dict = { }
