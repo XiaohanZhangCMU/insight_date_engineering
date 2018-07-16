@@ -7,7 +7,7 @@ import time
 import re
 from collections import Counter
 import pickle
-import numpy as np
+#import numpy as np
 
 def save_obj(obj, name ):
     with open(name + '.pkl', 'wb') as f:
